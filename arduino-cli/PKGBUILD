@@ -1,7 +1,7 @@
 # Maintainer: Markus Felten <markus.felten@gmx.de>
 
 pkgname=arduino-cli
-pkgver=0.3.5
+pkgver=0.3.6
 pkgversuffix=-alpha-preview
 pkgrel=1
 pkgdesc='Arduino command line interface.'
