@@ -2,7 +2,7 @@
 
 pkgname=arduino-cli
 pkgver=0.3.6
-pkgversuffix=-alpha-preview
+pkgversuffix=-alpha.preview
 pkgrel=1
 pkgdesc='Arduino command line interface.'
 arch=('armv7h')
