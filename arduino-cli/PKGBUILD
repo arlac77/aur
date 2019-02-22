@@ -1,17 +1,18 @@
 # Maintainer: Markus Felten <markus.felten@gmx.de>
 
 pkgname=arduino-cli
-pkgver=0.3.5-alpha-preview
+pkgver=0.3.5
+pkgversuffix=-alpha-preview
 pkgrel=1
 pkgdesc='Arduino command line interface.'
 arch=('armv7h')
 url='https://github.com/arduino/arduino-cli'
 license=('ARDUINO')
 depends=('git')
-source=(https://github.com/arduino/arduino-cli/releases/download/$pkgver/arduino-cli-$pkgver-linuxarm.tar.bz2)
+source=(https://github.com/arduino/arduino-cli/releases/download/${pkgver}${$pkgversuffix}/arduino-cli-${pkgver}${$pkgversuffix}-linuxarm.tar.bz2)
 sha512sums=('5fc6cbfb5dbdcae28a096d3a498c2dac6f2f1871b2da372a21c75fff15c14bb375c07fc4bd6708d99576334369055ef885e8478295948f64d2bb74f19d5359d4')
 
 
 package() {
-  install -Dm755 "${srcdir}/arduino-cli-${pkgver}-linuxarm" "${pkgdir}/usr/bin/arduino-cli"
+  install -Dm755 "${srcdir}/arduino-cli-${pkgver}${$pkgversuffix}-linuxarm" "${pkgdir}/usr/bin/arduino-cli"
 }
