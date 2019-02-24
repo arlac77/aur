@@ -9,10 +9,10 @@ arch=('armv7h' 'aarch64')
 url='https://github.com/arduino/arduino-cli'
 license=('ARDUINO')
 depends=('git')
-source=(https://downloads.arduino.cc/arduino-cli/arduino-cli-latest-linuxaarch64.tar.bz2)
-sha512sums=('c4f5d5383f1adced2d364deff8b5034748321f2f100f682dbc7c21792b1891aa195f6fbe7162ecdb3dce24c9996e962397b24d675741a3322d1929c543f3f42e')
-#source=(https://downloads.arduino.cc/arduino-cli/arduino-cli-latest-linuxarm.tar.bz2)
-#sha512sums=('5fc6cbfb5dbdcae28a096d3a498c2dac6f2f1871b2da372a21c75fff15c14bb375c07fc4bd6708d99576334369055ef885e8478295948f64d2bb74f19d5359d4')
+source=(https://downloads.arduino.cc/arduino-cli/arduino-cli-latest-linuxaarch64.tar.bz2
+        https://downloads.arduino.cc/arduino-cli/arduino-cli-latest-linuxarm.tar.bz2)
+sha512sums=('c4f5d5383f1adced2d364deff8b5034748321f2f100f682dbc7c21792b1891aa195f6fbe7162ecdb3dce24c9996e962397b24d675741a3322d1929c543f3f42e'
+            '5fc6cbfb5dbdcae28a096d3a498c2dac6f2f1871b2da372a21c75fff15c14bb375c07fc4bd6708d99576334369055ef885e8478295948f64d2bb74f19d5359d4')
 
 
 package() {
