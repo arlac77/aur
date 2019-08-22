@@ -1,10 +1,10 @@
 # Maintainer: Bruno Pagani 
 
-pkgname=nodejs-lts-dubnium
+pkgname=nodejs-current
 pkgver=10.16.2
 pkgrel=1
 pkgdesc="Evented I/O for V8 javascript (LTS release: Dubnium)"
-arch=(x86_64)
+arch=(armv7h)
 url="https://nodejs.org/"
 license=(MIT)
 depends=(openssl zlib icu libuv http-parser c-ares libnghttp2)
@@ -14,13 +14,7 @@ provides=("nodejs=$pkgver")
 conflicts=(nodejs)
 source=("${url}/dist/v${pkgver}/node-v${pkgver}.tar.xz")
 # https://nodejs.org/download/release/latest-dubnium/SHASUMS256.txt.asc
-sha256sums=(6cbc17795e9259dce7a8f5fd5a2e46f9e6920fb48b7d9539c5b2faa5bb5db4d8)
-validpgpkeys=(C4F0DFFF4E8C1A8236409D08E73BC641CC11F4C8  # Myles Borins 
-              77984A986EBC2AA786BC0F66B01FBB92821C587A  # Gibson Fahnestock 
-              B9AE9905FFD7803F25714661B63B535A4C206CA9  # Evan Lucas  
-              DD8F2338BAE7501E3DD5AC78C273792F7D83545D  # Rod Vagg 
-              B9E2F5981AA6E0CD28160D9FF13993A75599653C  # Shelley Vohr 
-              4ED778F539E3634C779C87C6D7062848A1AB005C) # Beth Griggs 
+sha256sums=()
 
 prepare() {
   cd node-v${pkgver}
