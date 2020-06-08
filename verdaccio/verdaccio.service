@@ -31,6 +31,11 @@ LockPersonality=true
 RestrictSUIDSGID=true
 CPUWeight=30
 IOWeight=30
+MemoryAccounting=true
+MemoryHigh=80M
+MemoryMax=120M
+StandardError=journal
+StandardOutput=journal
 
 [Install]
 WantedBy=multi-user.target
