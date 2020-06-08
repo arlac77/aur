@@ -1,0 +1,36 @@
+[Unit]
+Description=Verdaccio lightweight npm proxy registry
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/usr/bin/verdaccio --config /etc/verdaccio/config.yaml
+
+RestartSec=10
+TimeoutStartSec=20
+TimeoutStopSec=20
+NotifyAccess=all
+FileDescriptorStoreMax=5
+OOMPolicy=stop
+User=verdaccio
+Group=verdaccio
+SupplementaryGroups=http
+NoNewPrivileges=true
+ProtectSystem=full
+ProtectHome=true
+RuntimeDirectory=verdaccio
+StateDirectory=verdaccio
+CacheDirectory=verdaccio
+ConfigurationDirectory=verdaccio
+PrivateTmp=true
+PrivateDevices=true
+ProtectClock=true
+ProtectKernelTunables=true
+ProtectControlGroups=true
+LockPersonality=true
+RestrictSUIDSGID=true
+CPUWeight=30
+IOWeight=30
+
+[Install]
+WantedBy=multi-user.target
