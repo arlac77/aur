@@ -3,7 +3,7 @@ _npmver=4.6.2
 
 pkgname=$_npmname
 pkgver=$_npmver
-pkgrel=5
+pkgrel=6
 pkgdesc="Private npm repository server"
 arch=(any)
 url="https://github.com/verdaccio/verdaccio"
@@ -16,7 +16,7 @@ source=(https://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz
         verdaccio.sysusers)
 sha256sums=( 904d4e47ac462d6a99469ce8a9e969cf814a043beadbea747f8f4dd86004b256
 	fa57a5b89fe090ad7c174c768d6031742e0e86ada043b08bccd448c78d130812
-	c19457f48865b1fa464f03e25c51ad4e1b36200cab251aff49a9d4f7c86c63f0
+	8792df26cc033765384c353a8ac69480b8fae55a50f14c12d83947c9e259445d
 	75d544a5f25ca4c18743b1c879a8db0b9d9ae72ac41043a922733f19df394235)
 package() {
   cd $srcdir
