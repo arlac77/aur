@@ -3,7 +3,7 @@ _npmver=4.6.2
 
 pkgname=$_npmname
 pkgver=$_npmver
-pkgrel=6
+pkgrel=8
 pkgdesc="Private npm repository server"
 arch=(any)
 url="https://github.com/verdaccio/verdaccio"
@@ -13,11 +13,14 @@ optdepends=()
 source=(https://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz
         config.yaml
         verdaccio.service
-        verdaccio.sysusers)
-sha256sums=( 904d4e47ac462d6a99469ce8a9e969cf814a043beadbea747f8f4dd86004b256
+        verdaccio.sysusers
+        verdaccio.tmpfiles)
+sha256sums=(904d4e47ac462d6a99469ce8a9e969cf814a043beadbea747f8f4dd86004b256
 	fa57a5b89fe090ad7c174c768d6031742e0e86ada043b08bccd448c78d130812
-	8792df26cc033765384c353a8ac69480b8fae55a50f14c12d83947c9e259445d
-	75d544a5f25ca4c18743b1c879a8db0b9d9ae72ac41043a922733f19df394235)
+	898af058a2a6604c179b8974d1530040f488be974d0571f321687cb0046532c0
+	75d544a5f25ca4c18743b1c879a8db0b9d9ae72ac41043a922733f19df394235
+	616e7d6300c88d15ed10bde7c15d6baf8fe4eacb0013aaf6feb8f3cf87a071e1)
+
 package() {
   cd $srcdir
   local _npmdir="$pkgdir/usr/lib/node_modules/"
@@ -28,4 +31,5 @@ package() {
   install -Dm644 "$srcdir"/config.yaml "$pkgdir"/etc/verdaccio/config.yaml
   install -Dm644 "$srcdir"/verdaccio.service "$pkgdir"/usr/lib/systemd/system/verdaccio.service
   install -Dm644 "$srcdir"/verdaccio.sysusers "$pkgdir"/usr/lib/sysusers.d/verdaccio.conf
+  install -Dm644 "$srcdir"/verdaccio.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/verdaccio.conf
 }
