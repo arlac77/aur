@@ -3,7 +3,7 @@ _npmver=4.6.2
 
 pkgname=$_npmname
 pkgver=$_npmver
-pkgrel=8
+pkgrel=9
 pkgdesc="Private npm repository server"
 arch=(any)
 url="https://github.com/verdaccio/verdaccio"
@@ -16,8 +16,8 @@ source=(https://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz
         verdaccio.sysusers
         verdaccio.tmpfiles)
 sha256sums=(904d4e47ac462d6a99469ce8a9e969cf814a043beadbea747f8f4dd86004b256
-	fa57a5b89fe090ad7c174c768d6031742e0e86ada043b08bccd448c78d130812
-	898af058a2a6604c179b8974d1530040f488be974d0571f321687cb0046532c0
+	955c9c81d906dc96f2c6e54e63d483ef4b76ef526ea34bfab0c8e98f701b66b7
+	2f284baaa04b7dbffd0666e85ee720f358482d71cbcb9b35be70028d9d947ba8
 	75d544a5f25ca4c18743b1c879a8db0b9d9ae72ac41043a922733f19df394235
 	616e7d6300c88d15ed10bde7c15d6baf8fe4eacb0013aaf6feb8f3cf87a071e1)
 
@@ -27,7 +27,7 @@ package() {
   mkdir -p $_npmdir
   cd $_npmdir
   npm install -g --registry https://registry.npmjs.org/ --prefix "$pkgdir/usr" $_npmname@$_npmver
-  install -dm755 "$pkgdir"/etc/verdaccio
+  install -dm700 "$pkgdir"/etc/verdaccio
   install -Dm644 "$srcdir"/config.yaml "$pkgdir"/etc/verdaccio/config.yaml
   install -Dm644 "$srcdir"/verdaccio.service "$pkgdir"/usr/lib/systemd/system/verdaccio.service
   install -Dm644 "$srcdir"/verdaccio.sysusers "$pkgdir"/usr/lib/sysusers.d/verdaccio.conf

@@ -24,6 +24,7 @@ RuntimeDirectoryPreserve=yes
 StateDirectory=verdaccio
 CacheDirectory=verdaccio
 ConfigurationDirectory=verdaccio
+ConfigurationDirectoryMode=700
 PrivateTmp=true
 PrivateDevices=true
 ProtectClock=true
