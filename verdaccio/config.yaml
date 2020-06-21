@@ -29,10 +29,10 @@ auth:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
-    maxage: 5m
-  yarn:
-    url: https://registry.yarnpkg.com/
-    maxage: 5m
+#    maxage: 5m
+#  yarn:
+#    url: https://registry.yarnpkg.com/
+#    maxage: 5m
 
 packages:
   '@*/*':
@@ -73,7 +73,7 @@ middlewares:
 
 # log settings
 logs:
-  - { type: stdout, format: pretty, level: http }
+  - { type: stdout, format: pretty, level: warn }
 #experiments:
 #  # support for npm token command
 #  token: false
