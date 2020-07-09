@@ -3,7 +3,7 @@ _npmver=4.7.2
 
 pkgname=$_npmname
 pkgver=$_npmver
-pkgrel=0
+pkgrel=1
 pkgdesc="Private npm repository server"
 arch=(any)
 url="https://github.com/verdaccio/verdaccio"
@@ -26,7 +26,7 @@ package() {
   local _npmdir="$pkgdir/usr/lib/node_modules/"
   mkdir -p $_npmdir
   cd $_npmdir
-  npm install -g --registry https://registry.npmjs.org/ --prefix "$pkgdir/usr" $_npmname@$_npmver
+  npm install -g --production --registry https://registry.npmjs.org/ --prefix "$pkgdir/usr" $_npmname@$_npmver
   install -dm700 "$pkgdir"/etc/verdaccio
   install -Dm644 "$srcdir"/config.yaml "$pkgdir"/etc/verdaccio/config.yaml
   install -Dm644 "$srcdir"/verdaccio.service "$pkgdir"/usr/lib/systemd/system/verdaccio.service
