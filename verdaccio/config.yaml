@@ -29,6 +29,10 @@ auth:
 uplinks:
   npmjs:
     url: https://registry.npmjs.org/
+    auth:
+      type: bearer
+      token_env: true
+
 #    maxage: 5m
 #  yarn:
 #    url: https://registry.yarnpkg.com/
