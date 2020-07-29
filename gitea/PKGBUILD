@@ -3,7 +3,7 @@
 # Contributor: Frederik Schwan <frederik dot schwan at linux dot com>
 
 pkgname=gitea
-pkgver=1.12.2
+pkgver=1.12.3
 pkgrel=1
 pkgdesc="Painless self-hosted Git service. Community managed fork of Gogs."
 arch=(any)
@@ -21,7 +21,7 @@ optdepends=(
   'sqlite: SQLite support'
 )
 backup=('etc/gitea/app.ini')
-_tag=e04839f012b2995cd2d0ba45d018c2266af9400b # git rev-parse v${pkgver}
+_tag=77af0a23c473eb78d7b3824ca359512c023042a5 # git rev-parse v${pkgver}
 source=("git+https://github.com/go-gitea/gitea.git#tag=${_tag}?signed"
         gitea.tmpfiles
         gitea.service
