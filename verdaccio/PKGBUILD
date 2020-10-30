@@ -3,12 +3,12 @@ _npmver=4.8.1
 
 pkgname=$_npmname
 pkgver=$_npmver
-pkgrel=0
+pkgrel=1
 pkgdesc="Private npm repository server"
 arch=(any)
 url="https://github.com/verdaccio/verdaccio"
 license=(MIT)
-depends=('nodejs' 'npm')
+depends=('nodejs')
 optdepends=()
 source=(https://registry.npmjs.org/$_npmname/-/$_npmname-$_npmver.tgz
         config.yaml
@@ -32,4 +32,7 @@ package() {
   install -Dm644 "$srcdir"/verdaccio.service "$pkgdir"/usr/lib/systemd/system/verdaccio.service
   install -Dm644 "$srcdir"/verdaccio.sysusers "$pkgdir"/usr/lib/sysusers.d/verdaccio.conf
   install -Dm644 "$srcdir"/verdaccio.tmpfiles "$pkgdir"/usr/lib/tmpfiles.d/verdaccio.conf
+
+#  install -dm700 "$pkgdir"/var/lib/verdaccio/plugins/verdaccio-ldap/node_modules
+#  npm install -g --production --registry https://registry.npmjs.org/ --prefix "$pkgdir/var/lib/verdaccio/plugins/verdaccio-ldap" verdaccio-ldap 
 }
